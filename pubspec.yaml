@@ -1,0 +1,53 @@
+name: eat_at_ui
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+   - assets/images/light_mode.png
+   - assets/images/dark_mode.png
+  
+  fonts:
+  - family: Poppins
+    fonts:
+      - asset: assets/fonts/Poppins-Regular.ttf
+      - asset: assets/fonts/Poppins-SemiBold.ttf
+        weight: 400
+      - asset: assets/fonts/Poppins-SemiBoldItalic.ttf
+        weight: 400
+        style: italic
+      - asset: assets/fonts/Poppins-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/Poppins-BoldItalic.ttf
+        weight: 700
+        style: italic
+      - asset: assets/fonts/Poppins-ExtraBold.ttf
+        weight: 900
+      - asset: assets/fonts/Poppins-ExtraBoldItalic.ttf
+        weight: 900
+        style: italic
+  - family: NimbusSanL
+    fonts:
+      - asset: assets/fonts/NimbusSanL-Reg.otf
+      - asset: assets/fonts/NimbusSanL-RegIta.otf
+        style: italic
+      - asset: assets/fonts/NimbusSanL-Bol.otf
+        weight: 700
+      - asset: assets/fonts/NimbusSanL-BolIta.otf
+        weight: 700
+        style: italic
