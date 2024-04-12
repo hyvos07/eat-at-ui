@@ -42,6 +42,7 @@ class WelcomeText extends StatelessWidget {
         children: [
           Text(
             title,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: titleSize,
               fontWeight: FontWeight.w700,
@@ -50,6 +51,7 @@ class WelcomeText extends StatelessWidget {
           SizedBox(height: spacing),
           Text(
             subtitle,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: subtitleSize,
               fontWeight: FontWeight.w500,
