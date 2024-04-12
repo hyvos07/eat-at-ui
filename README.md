@@ -1,4 +1,4 @@
-# <center>Eat at UI</center>
+<h1 align="center"> Eat at UI </h1>
 
 
 [![Banner](assets/images/Banner.png)](#)
@@ -8,4 +8,4 @@
 
 <br>
 
-### <center> [ WIP ] </center>
+<h3 align="center"> [ WIP ] </h3>
