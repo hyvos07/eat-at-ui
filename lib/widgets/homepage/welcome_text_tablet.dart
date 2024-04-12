@@ -19,15 +19,15 @@ class WelcomeTextTablet extends StatelessWidget {
         const Text(
           "Mau Makan Apa Hari Ini?",
           style: TextStyle(
-            fontSize: 32,
+            fontSize: 34,
             fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(height: 25),
+        const SizedBox(height: 20),
         Text(
           "Rekomendasi Menu Hari Ini - $formattedDate",
           style: const TextStyle(
-            fontSize: 15,
+            fontSize: 16,
             fontWeight: FontWeight.w500,
           ),
         ),

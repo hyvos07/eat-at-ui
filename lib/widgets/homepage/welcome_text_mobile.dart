@@ -18,15 +18,15 @@ class WelcomeTextMobile extends StatelessWidget {
         const Text(
           "Mau Makan Apa Hari Ini?",
           style: TextStyle(
-            fontSize: 28,
+            fontSize: 24,
             fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 14),
         Text(
           "Rekomendasi Menu Hari Ini - $formattedDate",
           style: const TextStyle(
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: FontWeight.w500,
           ),
         ),
