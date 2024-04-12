@@ -13,49 +13,51 @@ class WelcomeText extends StatelessWidget {
             "${date.year}" // 2024
         );
 
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        double titleSize;
-        double spacing;
-        double subtitleSize;
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
+      String title = "Mau Makan Apa Hari Ini?";
+      String subtitle = "Rekomendasi Menu Hari Ini - $formattedDate";
+      double titleSize;
+      double spacing;
+      double subtitleSize;
 
-        if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
-          titleSize = 40;
-          spacing = 25;
-          subtitleSize = 20;
-        } else if (sizingInformation.deviceScreenType ==
-            DeviceScreenType.tablet) {
-          titleSize = 34;
-          spacing = 20;
-          subtitleSize = 16;
-        } else {
-          titleSize = 24;
-          spacing = 14;
-          subtitleSize = 11;
-        }
-
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Mau Makan Apa Hari Ini?",
-              style: TextStyle(
-                fontSize: titleSize,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            SizedBox(height: spacing),
-            Text(
-              "Rekomendasi Menu Hari Ini - $formattedDate",
-              style: TextStyle(
-                fontSize: subtitleSize,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ],
-        );
+      if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+        titleSize = 40;
+        spacing = 25;
+        subtitleSize = 20;
+      } else if (sizingInformation.deviceScreenType ==
+          DeviceScreenType.tablet) {
+        titleSize = 34;
+        spacing = 20;
+        subtitleSize = 16;
+      } else {
+        title = "Mau Makan Apa\nHari Ini?";
+        subtitle = "Rekomendasi Menu Hari Ini\n$formattedDate";
+        titleSize = 24;
+        spacing = 14;
+        subtitleSize = 11;
       }
-    );
+
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: titleSize,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          SizedBox(height: spacing),
+          Text(
+            subtitle,
+            style: TextStyle(
+              fontSize: subtitleSize,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      );
+    });
   }
 
   String _getDayInIndonesian(int day) {
