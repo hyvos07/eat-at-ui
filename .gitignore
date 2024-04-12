@@ -56,6 +56,7 @@ analysis_benchmark.json
 .pub-cache/
 .pub/
 build/
+.firebase/
 flutter_*.png
 linked_*.ds
 unlinked.ds
