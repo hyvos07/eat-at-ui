@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:eat_at_ui/widgets/welcometext/welcome_text.dart';
+import 'package:eat_at_ui/widgets/homepage/homepage.dart';
 import 'package:eat_at_ui/widgets/centerview/center_view.dart';
 import 'package:eat_at_ui/widgets/navbar/navigation_bar.dart';
 
@@ -15,12 +15,12 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: isDarkMode ? const Color(0xFF1E1E1E) : Colors.white,
-      body: CenterView(
+      body: const CenterView(
         child: Column(
           children: [
-            NavBar(isDarkMode: HomeView.isDarkMode),
-            const SizedBox(height: 80),
-            const WelcomeText(),
+            NavBar(),
+            SizedBox(height: 80),
+            HomePage(),
           ],
         ),
       ),
