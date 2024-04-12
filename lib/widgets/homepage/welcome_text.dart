@@ -1,37 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class WelcomeText extends StatelessWidget {
   const WelcomeText({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     DateTime date = DateTime.now().toUtc().add(const Duration(hours: 7));
-    String formattedDate = (
-      "${_getDayInIndonesian(date.weekday)}, " // Senin,
-      "${date.day} "                           // 1
-      "${_getMonthInIndonesian(date.month)} "  // Januari
-      "${date.year}"                           // 2024
-    );
+    String formattedDate = ("${_getDayInIndonesian(date.weekday)}, " // Senin,
+            "${date.day} " // 1
+            "${_getMonthInIndonesian(date.month)} " // Januari
+            "${date.year}" // 2024
+        );
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const Text(
-          "Mau Makan Apa Hari Ini?",
-          style: TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-        const SizedBox(height: 30),
-        Text(
-          "Rekomendasi Menu Hari Ini - $formattedDate",
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ],
+    return ResponsiveBuilder(
+      builder: (context, sizingInformation) {
+        double titleSize;
+        double spacing;
+        double subtitleSize;
+
+        if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+          titleSize = 40;
+          spacing = 25;
+          subtitleSize = 20;
+        } else if (sizingInformation.deviceScreenType ==
+            DeviceScreenType.tablet) {
+          titleSize = 34;
+          spacing = 20;
+          subtitleSize = 16;
+        } else {
+          titleSize = 24;
+          spacing = 14;
+          subtitleSize = 11;
+        }
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Mau Makan Apa Hari Ini?",
+              style: TextStyle(
+                fontSize: titleSize,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            SizedBox(height: spacing),
+            Text(
+              "Rekomendasi Menu Hari Ini - $formattedDate",
+              style: TextStyle(
+                fontSize: subtitleSize,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        );
+      }
     );
   }
 

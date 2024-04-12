@@ -20,7 +20,7 @@ class NavBarTabletDesktop extends StatelessWidget {
               NavBarItem(title: 'Search'),
               SizedBox(width: 60), // for spacing
               NavBarItem(title: 'About'),
-              SizedBox(width: 40), // for spacing
+              SizedBox(width: 30), // for spacing
             ],
           ),
         ],

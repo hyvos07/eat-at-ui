@@ -15,13 +15,15 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: isDarkMode ? const Color(0xFF1E1E1E) : Colors.white,
-      body: const CenterView(
-        child: Column(
-          children: [
-            NavBar(),
-            SizedBox(height: 80),
-            HomePage(),
-          ],
+      body: const SingleChildScrollView(
+        child: CenterView(
+          child: Column(
+            children: [
+              NavBar(),
+              SizedBox(height: 60),
+              HomePage(),
+            ],
+          ),
         ),
       ),
     );
